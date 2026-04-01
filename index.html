@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Explorer</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    #movies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      width: 200px;
+    }
+    img { width: 100%; }
+  </style>
+</head>
+<body>
 
+<h1>Movie Explorer</h1>
+
+<input id="search" placeholder="Search movies..." />
+<button onclick="searchMovies()">Search</button>
+
+<p id="loading"></p>
+<div id="movies"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
