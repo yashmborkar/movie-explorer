@@ -10,7 +10,7 @@ I picked this idea because movies are something everyone relates to and the TMDB
  
 ## API being used
  
-TMDB API - https://www.themoviedb.org/
+TheMovieDB API - [https://www.themoviedb.org/](https://www.omdbapi.com/)
  
 The main endpoints I plan to use:
 - /movie/popular (to load movies on the homepage)
