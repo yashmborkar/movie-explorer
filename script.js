@@ -1,7 +1,7 @@
 const API_KEY = "24bde983";
 
 let allMovies = [];
-let favorites = [];
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
 async function searchMovies() {
   const query = document.getElementById("search").value;
@@ -36,7 +36,9 @@ function displayMovies(movies) {
       <img src="${movie.Poster}" />
       <h3>${movie.Title}</h3>
       <p>${movie.Year}</p>
-      <button onclick="toggleFavorite('${movie.imdbID}')">Favorite</button>
+      <button onclick="toggleFavorite('${movie.imdbID}')">
+        ${favorites.includes(movie.imdbID) ? "Unfavorite" : "Favorite"}
+      </button>
     </div>
   `).join("");
 }
@@ -70,5 +72,6 @@ function toggleFavorite(id) {
     favorites.push(id);
   }
 
-  console.log(favorites);
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+  displayMovies(allMovies);
 }
